@@ -6,8 +6,13 @@ createBoard()
 
 function createBoard () {
   let cell = document.getElementsByClassName("cell");
-console.log(cell)
- cell[0].classList.add("hidden");
- cell[0].innerHTML = "A"
-//  return board;
+  var letters = "aabbccddeeffgghhiijj"
+    var assignedLetter = ""
+    for (var i=0; i < 20; i++) {
+        assignedLetter = letters[Math.floor(Math.random() * letters.length)]
+        letters = letters.replace(assignedLetter, '')
+        console.log(letters)
+        cell[i].classList.add("hidden");
+        cell[i].innerHTML = assignedLetter
+    }
 }
